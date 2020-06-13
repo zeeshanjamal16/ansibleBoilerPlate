@@ -1,0 +1,5 @@
+---
+vaultVariableValue: "{{ vault_encryptedValue }}"
+variableToUseinArray:
+ - value1
+ - value2

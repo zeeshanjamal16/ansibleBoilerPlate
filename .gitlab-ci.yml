@@ -1,0 +1,19 @@
+before_script:
+  - whoami
+  - groups $(whoami)
+stages:
+  - deploy_on_development
+  - deploy_on_production
+deploy_on_development:
+  stage: deploy_on_development
+  only:
+    - master
+  script:
+    - bash deployOnMainServer.sh
+deploy_on_production:
+  stage: deploy_on_production
+  only:
+    - master
+  script:
+    - bash deployOnMainServer.sh
+  when: manual

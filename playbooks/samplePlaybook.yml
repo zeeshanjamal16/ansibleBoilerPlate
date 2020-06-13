@@ -1,0 +1,10 @@
+--- # Playbook for including different roles
+
+- hosts: localhost
+  gather_facts: true
+  vars_files:
+   - ../inventories/host_vars/global_vars.yml
+   - ../inventories/host_vars/vault
+
+  roles:
+   - { role: sampleRole, tags: sampleRole }
